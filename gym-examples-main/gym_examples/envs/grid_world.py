@@ -17,6 +17,8 @@ class GridWorldEnv(gym.Env):
             {
                 "agent": spaces.Box(0, size - 1, shape=(2,), dtype=int),
                 "target": spaces.Box(0, size - 1, shape=(2,), dtype=int),
+                # Cause number's of action are 4, 
+                #observation's spaces.box declare [0,size-1 = 4] = [0,0,0,0] and 2-dimension
             }
         )
 
@@ -56,8 +58,14 @@ class GridWorldEnv(gym.Env):
             "distance": np.linalg.norm(
                 self._agent_location - self._target_location, ord=1
             )
-        }
+         }
+        # np.linalg.norm() 함수를 호출하여 두 지점 사이의 거리를 계산합니다.
+        # self._agent_location은 에이전트의 위치를 나타내는 변수로 보입니다.
+        # self._target_location은 목표 위치를 나타내는 변수로 보입니다.
+        # ord=1은 거리를 계산할 때 사용할 놈(norm)의 유형을 나타냅니다. 여기서 ord=1은 맨해튼 거리를 의미합니다.
+    
 
+    
     def reset(self, seed=None, options=None):
         # We need the following line to seed self.np_random
         super().reset(seed=seed)
