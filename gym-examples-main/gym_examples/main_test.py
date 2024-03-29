@@ -1,8 +1,8 @@
-import gymnasium as gym
+import gym
 import gym_examples
 
 #env = gym.make("LunarLander-v2", render_mode="human")
-env = gymnasium.make('gym_examples/GridWorld-v0', size=10)
+env = gym.make('gym_examples/GridWorld-v0',render_mode='human' ,size=10)
 
 observation, info = env.reset()
 
@@ -12,5 +12,4 @@ for _ in range(1000):
 
     if terminated or truncated:
         observation, info = env.reset()
-
 env.close()
