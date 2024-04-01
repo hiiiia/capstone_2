@@ -27,14 +27,14 @@ public class Player : MonoBehaviour
     public Vector3 moveVec { get { return this.m_moveVec; } private set { this.m_moveVec = value; } }
 
     // --------
-    Rigidbody rb;
+    Rigidbody2D rb;
     bool isGround = false;
     float _time = 0f;
     bool isLeft = false;
     private void Awake()
     {
         inst = this;
-        rb = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     private void FixedUpdate()
@@ -71,20 +71,21 @@ public class Player : MonoBehaviour
         if (isGround && vertical > 0f)
         {
             isGround = false;
-            rb.AddForce(Vector3.up * vertical* 1.5f *speed , ForceMode.Impulse);
+            
+            rb.AddForce(Vector2.up * vertical * 1.5f * speed, ForceMode2D.Impulse);
         }
         else if(!isGround && vertical < 0f)
         {
-            isGround = true;
-            rb.AddForce(Vector3.up * vertical * 2f * speed, ForceMode.Impulse);
+            isGround = true; 
+            rb.AddForce(Vector2.up * vertical * 2.5f * speed, ForceMode2D.Impulse);
         }
 
         transform.position += moveVec * speed * Time.deltaTime;
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Ground")
+        if (collision.gameObject.tag == "Ground")
         {
             isGround = true;
         }

@@ -17,4 +17,10 @@ public class bullet : MonoBehaviour
         });
     }
 
+    public void DeleteObj()
+    {
+        transform.DOKill();
+        Destroy(gameObject);
+    }
+
 }
