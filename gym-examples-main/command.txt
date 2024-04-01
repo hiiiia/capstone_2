@@ -11,7 +11,7 @@ git zip 다운
 압축풀기
 cd gym-examples
 python -m venv .env
-cd ".env/Scripts/activate.bat"
+".env/Scripts/activate.bat"
 --> (.env) 가상환경 생성 및 실행
 
  그후 gym-examples-main dir로 이동
@@ -20,6 +20,14 @@ cd ".env/Scripts/activate.bat"
 
 
 =======
+
+설정 완료후 다시 실행시
+cd gym_examples
+".env/Scripts/activate.bat"
+python main_test.py
+
+=======
+
 
 가상 환경 생성
 Windows: python -m venv [가상환경명]
