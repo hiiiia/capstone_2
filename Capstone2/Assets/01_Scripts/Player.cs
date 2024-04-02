@@ -8,23 +8,23 @@ public class Player : MonoBehaviour
     public GameObject bullet;
     // 플레이어 스피드
     private float m_speed = 5f;
-    public float speed { get { return this.m_speed; } private set { this.m_speed = value; } }
+    public float speed { get { return this.m_speed; } set { this.m_speed = value; } }
 
     // 키보드 상하 입력 , 상 키 : 1값, 하 키 : -1값
     private float m_vertical;
-    public float vertical { get { return this.m_vertical; } private set { this.m_vertical = value; } }
+    public float vertical { get { return this.m_vertical; } set { this.m_vertical = value; } }
 
     // 키보드 좌우 입력, 우 키 : +값, 좌 키 : -값
     private float m_horizontal;
-    public float horizontal { get { return this.m_horizontal; } private set { this.m_horizontal = value; } }
+    public float horizontal { get { return this.m_horizontal; } set { this.m_horizontal = value; } }
 
     // 키보드 z 입력, z 입력 : 1 , 미입력 0;
     private float m_fire;
-    public float fire { get { return this.m_fire; } private set { this.m_fire = value; } }
+    public float fire { get { return this.m_fire; } set { this.m_fire = value; } }
 
     // 플레이어 움직이는 방향 벡터
     private Vector3 m_moveVec;
-    public Vector3 moveVec { get { return this.m_moveVec; } private set { this.m_moveVec = value; } }
+    public Vector3 moveVec { get { return this.m_moveVec; } set { this.m_moveVec = value; } }
 
     // --------
     Rigidbody2D rb;
