@@ -9,7 +9,7 @@ Vscode에서 사용법
 
 git zip 다운
 압축풀기
-cd gym-examples
+cd gym_examples
 python -m venv .env
 ".env/Scripts/activate.bat"
 --> (.env) 가상환경 생성 및 실행
