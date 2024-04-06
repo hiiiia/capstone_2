@@ -6,6 +6,10 @@ public class Player : MonoBehaviour
 {
     public static Player inst;
     public GameObject bullet;
+
+    // 플레이어 체력
+    public int hp = 3;
+
     // 플레이어 스피드
     private float m_speed = 5f;
     public float speed { get { return this.m_speed; } set { this.m_speed = value; } }
@@ -83,6 +87,21 @@ public class Player : MonoBehaviour
         transform.position += moveVec * speed * Time.deltaTime;
     }
 
+    public void GetDamage(int damage)
+    {
+        if( hp - damage <= 0)
+        {
+            OnDie();
+            return;
+        }
+        hp -= damage;
+    }
+
+    void OnDie()
+    {
+        Debug.Log("죽음");
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Ground")
@@ -92,6 +111,14 @@ public class Player : MonoBehaviour
         else
         {
             isGround = false;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "Attack")
+        {
+            GetDamage(1);
         }
     }
 
