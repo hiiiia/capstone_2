@@ -11,7 +11,7 @@ public class Boss_IDLE : StateBase
     public override void Excute(Boss entity)
     {
         float randNum = Random.Range(0f, 1f);
-        Debug.Log(randNum);
+        //Debug.Log(randNum);
         if(randNum > 0.5f)
         {
             entity.NextState(BossStates.Attack_1);

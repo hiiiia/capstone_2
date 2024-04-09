@@ -17,6 +17,8 @@ public class Attack_Cross : StateBase
         isAttackEnd = false;
         _time = 0f;
         StartCoroutine(attack());
+
+        entity.SetAttackGrid(new int[9] { 0, 1, 0, 1, 1, 1, 0, 1, 0 });
     }
 
     public override void Excute(Boss entity)
@@ -32,13 +34,14 @@ public class Attack_Cross : StateBase
 
     public override void Exit(Boss entity)
     {
+        entity.SetAttackGrid(new int[9] { 0, 0, 0, 0, 0, 0, 0, 0, 0 });
         isAttackEnd = false;
         _time = 0f;
     }
 
     IEnumerator attack()
     {
-        Debug.Log("11자 공격 표시--");
+        //Debug.Log("십자 공격 표시--");
 
         foreach (GameObject obj in AttackAreas)
         {
@@ -62,7 +65,7 @@ public class Attack_Cross : StateBase
         {
             obj.SetActive(false);
         }
-        Debug.Log("11자 공격 완료");
+        //Debug.Log("십자 공격 완료");
         isAttackEnd = true;
     }
 }
