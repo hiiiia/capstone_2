@@ -7,8 +7,17 @@ def handle_client(client_socket):
         data = client_socket.recv(1024)
         if not data:
             break
-        print("수신한 데이터:", data.decode())
+        #print("수신한 데이터:", data.decode())
 
+
+        received_data = data.decode().split(',')
+        #print("수신한 데이터:", received_data[:7])
+
+        # 수신한 데이터를 int와 float로 변환하여 저장
+        converted_data = [int(received_data[i].strip()) if i < 5 else float(received_data[i].strip()) for i in range(7)]
+        print("변환한 데이터:", converted_data)
+        
+        
         # 클라이언트에게 데이터 전송
         #message = input("전송할 메시지를 입력하세요: ")
         message = "Done"
