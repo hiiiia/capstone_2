@@ -15,6 +15,7 @@ public class Attack_11 : StateBase
     {
         isAttackEnd = false;
         _time = 0f;
+        entity.SetAttackGrid(new int[9] { 1, 0, 1, 1, 0, 1, 1, 0, 1 });
         StartCoroutine(attack());
     }
 
@@ -31,13 +32,14 @@ public class Attack_11 : StateBase
 
     public override void Exit(Boss entity)
     {
+        entity.SetAttackGrid(new int[9] { 0, 0, 0, 0, 0, 0, 0, 0, 0 });
         isAttackEnd = false;
         _time = 0f;
     }
 
     IEnumerator attack()
     {
-        Debug.Log("11자 공격 표시--");
+        //Debug.Log("11자 공격 표시--");
         
         foreach(GameObject obj in AttackAreas)
         {
@@ -61,7 +63,7 @@ public class Attack_11 : StateBase
         {
             obj.SetActive(false);
         }
-        Debug.Log("11자 공격 완료");
+        //Debug.Log("11자 공격 완료");
         isAttackEnd = true;
     }
 }

@@ -28,6 +28,8 @@ public class Boss : MonoBehaviour
         } 
     }
 
+    public int[] AttackGrid;
+
     public StateBase[] AttackStates = new StateBase[6];
 
     StateBase currentState;
@@ -36,6 +38,8 @@ public class Boss : MonoBehaviour
     {
         inst = this;
         LoadAttackStates();
+        AttackGrid = new int[9];
+        SetAttackGrid(new int[9] { 0, 0, 0, 0, 0, 0, 0, 0, 0 });
     }
 
     private void FixedUpdate()
@@ -83,6 +87,24 @@ public class Boss : MonoBehaviour
             return;
         }
         hp -= damage;
+    }
+
+    public void SetAttackGrid(int[] gridnumber)
+    {
+        for(int i = 0; i < 9; i++)
+        {
+            AttackGrid[i] = 0;
+        }
+
+        for (int i = 0; i < 9; i++)
+        {
+            AttackGrid[i] = gridnumber[i];
+        }
+
+        Debug.Log($"{AttackGrid[0]} | {AttackGrid[1]} | {AttackGrid[2]}\n" +
+            $"{AttackGrid[3]} | {AttackGrid[4]} | {AttackGrid[5]}\n" +
+            $"{AttackGrid[6]} | {AttackGrid[7]} | {AttackGrid[8]}");
+
     }
 
     // 충돌시 발생하는 함수
