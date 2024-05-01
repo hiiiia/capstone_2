@@ -2,7 +2,7 @@ import gym
 import gym_examples
 
 #env = gym.make("LunarLander-v2", render_mode="human")
-env = gym.make('gym_examples/GridWorld-v0',render_mode='human' ,size=10)
+env = gym.make('gym_examples/GridWorld-v1',render_mode='human' ,size=50)
 
 observation, info = env.reset()
 

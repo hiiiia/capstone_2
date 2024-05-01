@@ -56,3 +56,11 @@ pip freeze > requirements.txt
 
 가상환경 삭제하기
 가상 환경은 결국 폴더 형태로 저장되기 때문에, 해당 폴더를 삭제하면 가상 환경도 함께 삭제된다.
+
+
+
+=================
+
+
+(.env) C:\Users\gksql\GitHub\capstone_2\gym-examples-main\gym_examples>python __init__.py
+
