@@ -61,6 +61,13 @@ pip freeze > requirements.txt
 
 =================
 
+C:\Users\gksql\GitHub\capstone_2\gym-examples-main\gym_examples\envs\grid_world.py
+위 파일 수정후 
+
 
 (.env) C:\Users\gksql\GitHub\capstone_2\gym-examples-main\gym_examples>python __init__.py
+환경 등록
 
+
+(.env) C:\Users\gksql\GitHub\capstone_2\gym-examples-main\gym_examples>python C:\Users\gksql\GitHub\capstone_2\gym-examples-main\gym_examples\main_test.py
+파일 실행
